@@ -1,0 +1,66 @@
+<!-- Student_course_Registration_Form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Course Registration Form</title>
+    <style>
+        input[type="submit"], input[type="reset"] {
+            background-color: pink; 
+            color: black; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        }
+        input[type="submit"]:hover {
+            background-color: greenyellow;
+        }
+        input[type="reset"]:hover {
+            background-color: rgb(231, 71, 71);
+        }
+        form {
+            background-color: whitesmoke; 
+            padding: 20px; 
+            border-radius: 5px;  
+        }
+        input:invalid {
+            border: 2px solid red;
+        }
+        input:valid {
+            border: 2px solid rgb(39, 243, 39);
+        }
+    </style>
+</head>
+<body style="background-color: plum;">
+    <img src = "https://dl.geu.ac.in/uploads/image/geu-logo-1.webp" align="right" height="90">
+    <h1>Student Course Registration Form</h1><br><br>
+    <marquee direction ="right"><h2>Graphic Era Deemed to be University, Clement Town, Dehradun</h2></marquee>
+    <form action = "Registration_form_Submission.html" method = "post">
+        <label for = "student_name">Student Name</label><br>
+        <input type="text" id="student_name" name="student_name" required minlength="3" maxlength="30"><br><br>
+        <label for = "uni_email">University Email ID</label><br>
+        <input type="email" id="uni_email" name="uni_email" required pattern="[a-zA-Z0-9.]+@geu.ac.in"><br><br>
+        <label for = "usn">University Roll Number</label><br>
+        <input type="text" id="usn" name="usn" pattern = "[A-Z][A-Z][0-9][0-9][A-Z][A-Z][A-Z]"><br><br>
+        <label for = "course">Course</label><br>
+        <select id="course" name="course">
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+        </select><br><br>
+        <label for = "age">Age</label><br>
+        <input type="number" id="age" name="age" min="18" max="30"><br><br>
+        <label for = "gender">Gender</label><br>
+        <input type="radio" id="male" name ="gender">
+        <label for  ="male">Male</label><br>
+        <input type="radio" id="female" name ="gender">
+        <label for  ="female">Female</label><br><br>
+        <label for = "resume">Upload resume</label><br>
+        <input type="file" id="resume" name="resume"><br><br>
+        <input type="submit" value="Submit">&nbsp;
+        <input type="reset" value="Reset">
+    </form>
+</body> 
+</html>

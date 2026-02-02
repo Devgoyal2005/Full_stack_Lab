@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Job Application Form</title>
+    <style>
+        input[type="submit"], input[type="reset"] {
+            background-color: rgb(193, 132, 221); 
+            color: black; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        }
+        input[type="submit"]:hover {
+            background-color: greenyellow;
+        }
+        input[type="reset"]:hover {
+            background-color: rgb(231, 71, 71); 
+        }
+        form {
+            background-color: whitesmoke; 
+            padding: 20px; 
+            border-radius: 5px;  
+        }
+        input:invalid, textarea:invalid {
+            border: 2px solid rgb(233, 39, 49);
+        }
+        input:valid, textarea:valid {
+            border: 2px solid rgb(39, 243, 39);
+        }
+    </style>
+</head>
+<body style="background-color: rgb(160, 228, 147);">
+    <h1>Online Job Application Form</h1><br><br>
+    <form action="Job_Application_Submission.html" method="post">
+        <label for="fullname">Applicant Full Name</label><br>
+        <input type="text" id="fullname" name="fullname" 
+               required minlength="4"><br><br>
+        <label for="email">Email Address</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mobile">Mobile Number</label><br>
+        <input type="text" id="mobile" name="mobile" pattern="[0-9]{10}" required><br><br>
+        <label for="experience">Years of Experience</label><br>
+        <input type="number" id="experience" name="experience" min="0" max="30" step="1"><br><br>
+        <label for="jobrole">Job Role</label><br>
+        <select id="jobrole" name="jobrole" required>
+            <option value="">Select Role</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Analyst">Data Analyst</option>
+        </select><br><br>
+        <label>Technical Skills</label><br>
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label><br>
+        <input type="checkbox" id="python" name="skills" value="Python">
+        <label for="python">Python</label><br><br>
+        <label for="coverletter">Cover Letter</label><br>
+        <textarea id="coverletter" name="coverletter" rows="5" cols="40" required minlength="50"></textarea><br><br>
+        <input type="submit" value="Submit Application">&nbsp;
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
