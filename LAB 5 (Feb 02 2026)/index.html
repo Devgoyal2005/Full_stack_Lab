@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Image Map</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">City Hospital Interactive Map</h1>
+    <img src="hospital.png" width="1536" height="1024" usemap="#hospitalmap">
+
+    <map name="hospitalmap">
+        <area 
+            shape="rect"
+            coords="183,851,407,900"
+            href="opd.html"
+            alt="Outpatient Department"
+            title="Outpatient Department (OPD)">
+        <area 
+            shape="circle"
+            coords="768,851,85"
+            href="diagnostic.html"
+            alt="Diagnostic Lab"
+            title="Diagnostic Laboratory">
+        <area 
+            shape="poly"
+            coords="1120,849,1220,819,1334,826,1384,890,1272,934,1131,911"
+            href="emergency.html"
+            alt="Emergency Zone"
+            title="Emergency Zone">
+    </map>
+</body>
+</html>
