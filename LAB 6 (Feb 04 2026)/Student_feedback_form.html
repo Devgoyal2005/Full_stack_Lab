@@ -1,0 +1,58 @@
+<!-- Student_course_Registration_Form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="styles.css"/>
+    
+    <style>
+        form {
+            margin: auto;
+            width: 70%;
+            background-color: rgb(192, 242, 210); 
+            padding: 20px; 
+            border-radius: 50px;
+            box-shadow: 2px 2px 20px gray;
+  
+        }
+        label, input, select {
+            display: block;
+        }
+        input, select{
+            height:30px;
+            width:400px;
+        }
+        select[id="course"]
+        {
+            height:50px;
+            width: 250px;
+            font-size: 15px;
+        }
+        textarea{
+            height:100px;
+            width: 600px;
+        }
+
+    </style> 
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+    <form action = "submission.html" method = "post">
+        <label for = "student_name">Student Name</label>
+        <input type="text" id="student_name" name="student_name" required minlength="3" maxlength="30"><br><br>
+        <label for = "uni_email">University Email ID</label><br>
+        <input type="email" id="uni_email" name="uni_email" required pattern="[a-zA-Z0-9.]+@geu.ac.in" ><br><br>
+        <label for = "course">Course</label><br>
+        <select id="course" name="course" required>
+            <option value="Compiler Design">Compiler Design</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Full Stack web Developement">Full Stack web Developement</option>
+        </select><br><br>
+        <label for = "feedback">Feedback / Comments</label><br>
+        <textarea id="feedback" name="feedback" required minlength="10" maxlength="200"></textarea><br><br>
+        <input type="submit" value="Submit"
+       style="background-color: pink; color: red; cursor: pointer;width: 100px;">
+    </form>
+</body> 
+</html> 

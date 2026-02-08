@@ -1,0 +1,12 @@
+font{
+    font-family: Arial, sans-serif;
+}
+
+body {
+background-color: rgb(181, 221, 160);
+}
+
+h1 {
+    color: rgb(7, 0, 139);
+    text-align: center;
+}
