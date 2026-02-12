@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="page">
+        <h1 style="background-color:#f3d8f5; padding: 20px;">Simple Calculator</h1>
+
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+
+            <br><br>
+            <button class="num" onclick="press('7')">7</button>
+            <button class="num" onclick="press('8')">8</button>
+            <button class="num" onclick="press('9')">9</button>
+
+            <br>
+
+            <button class="num" onclick="press('4')">4</button>
+            <button class="num" onclick="press('5')">5</button>
+            <button class="num" onclick="press('6')">6</button>
+
+            <br>
+
+            <button class="num" onclick="press('1')">1</button>
+            <button class="num" onclick="press('2')">2</button>
+            <button class="num" onclick="press('3')">3</button>
+
+            <br>
+
+            <button class="num" onclick="press('0')">0</button>
+
+            <br>
+
+            <button class="op" onclick="press('+')">+</button>
+            <button class="op" onclick="press('-')">-</button>
+            <button class="op" onclick="press('*')">*</button>
+
+            <br>
+
+            <button class="op" onclick="press('/')">/</button>
+            <button class="op" onclick="press('%')">%</button>
+            <button class="op" onclick="press('**')">^</button>
+
+            <br>
+
+            <button class="calculate" onclick="calculate()">=</button>
+            <button class="clear" onclick="clearAll()">C</button>
+        </div>
+    </div>
+    <script>
+    let exp = "";
+
+    function press(val) {
+        exp += val;
+        document.getElementById("display").value = exp;
+    }
+
+    function calculate() {
+        try {
+            exp = eval(exp);
+            document.getElementById("display").value = exp;
+        } catch {
+            document.getElementById("display").value = "Error";
+            exp = "";
+        }
+    }
+
+    function clearAll() {
+        exp = "";
+        document.getElementById("display").value = "";
+    }
+</script>
+
+</body>
+
+</html>

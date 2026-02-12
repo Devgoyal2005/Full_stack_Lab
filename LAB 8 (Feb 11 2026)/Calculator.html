@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;   /* horizontal center */
+        align-items: center;       /* vertical center */
+        height: 100vh;             /* full viewport height */
+        margin: 0;
+        background: #eee;
+    }
+
+    .box {
+        width: 550px;
+        height: 450px;
+        padding: 20px;
+        background: #ecf29a;
+        border-radius: 8px;
+    }
+
+    input, button {
+        width: 100px;
+        padding: 8px;
+        margin: 8px 0;
+    }
+    input[type="number"]
+    {
+        height: 30px;
+        width: 250px;
+        font-size: 15px;
+    }
+    input[type="text"]
+    {
+        height: 50px;
+        width: 525px;
+        font-size: 15px;
+    }
+    button {
+        width: 150px;
+        height: 50px;
+        font-size: 18px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="box">
+    <h1 style="background-color: rgb(208, 231, 119);padding: 20px;">BMI Calculator</h1>
+
+    <input type="number" id="height" placeholder="Height (cm)">
+    <input type="number" id="weight" placeholder="Weight (kg)"><br>
+
+    <!-- Output field -->
+    <input type="text" id="output" placeholder="BMI Result" readonly><br>
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <button onclick="clearAll()">Clear</button>
+</div>
+
+<script>
+function calculateBMI() {
+    let h = document.getElementById("height").value;
+    let w = document.getElementById("weight").value;
+
+    if (h === "" || w === "") {
+        document.getElementById("output").value = "Enter height & weight";
+        return;
+    }
+
+    let heightMeter = h / 100;
+    let bmi = w / (heightMeter * heightMeter);
+
+    document.getElementById("output").value = bmi.toFixed(2);
+}
+
+function clearAll() {
+    document.getElementById("height").value = "";
+    document.getElementById("weight").value = "";
+    document.getElementById("output").value = "";
+}
+</script>
+
+</body>
+</html>
