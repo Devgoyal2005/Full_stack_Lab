@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admit Card</title>
+
+    <style>
+        body {
+            background-color: lightgrey;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .details {
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function printAdmitCard() {
+            let confirmPrint = window.confirm("Do you want to print the Admit Card?");
+            if (confirmPrint) {
+                window.print();
+            }
+            window.close();
+        }
+        function closePage() {
+            window.close();
+        }
+    </script>
+</head>
+
+<body >
+
+    <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp" alt="College Logo">
+    <img src="WhatsApp Image 2025-06-01 at 13.16.20_fcf039d8.jpg" alt="Student Photo" align = "right" height="250px" width="220px">
+
+    <h1>Examination Admit Card</h1>
+    <div class="details">
+        <strong>Student Name:</strong> Dev Goyal <br>
+        <strong>Program:</strong> B.Tech <br>
+        <strong>Branch:</strong> (CSE) With AI & DS <br>
+        <strong>Father's Name:</strong> Mr. Nikhil Goyal <br>
+        <strong>Semester:</strong> 6 <br>
+        <strong>Roll No:</strong> 2023857 <br>
+        <strong>Enrollment No:</strong> GE-232023857
+    </div>
+
+    <table>
+        <tr>
+            <th>S. No</th>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>TCS-662</td>
+            <td>Machine Learning</td>
+            <td>Eligible</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>TCS-601</td>
+            <td>Compiler Design</td>
+            <td>Eligible</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>TCS-693</td>
+            <td>Full Stack Web Development</td>
+            <td>Eligible</td>
+        </tr>
+    </table>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button onclick="printAdmitCard()">Print</button>
+        <button onclick="closePage()">Close</button>
+    </div>
+
+</body>
+</html>

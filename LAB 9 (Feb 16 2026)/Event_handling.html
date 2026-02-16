@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Home Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            height: 120px;
+        }
+
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .images img {
+            height: 150px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        const colors = [
+            "lightblue", 
+            "lightgreen", 
+            "lightpink", 
+            "lightyellow",  
+        ];
+
+        function changeTheme() {
+            let randomValue = Math.random();
+            let index = Math.floor(randomValue * colors.length);
+            document.body.style.backgroundColor = colors[index];
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Graphic Era University</h1>
+    </header>
+
+    <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp"
+         alt="College Logo"
+         class="logo">
+
+    <div class="content">
+        <p>
+            Graphic Era University is a premier institution focused on excellence
+            in education, research, and innovation. The university offers
+            undergraduate, postgraduate, and doctoral programs in engineering,
+            management, science, and humanities.
+        </p>
+
+        <!-- Campus Images -->
+        <div class="images">
+            <img src="https://dl.geu.ac.in/uploads/image/best-courses-with-high-placement-rates.png" alt="Campus Image 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLbDjiq5hR_lTI9Gx3UU3Z0vRF9oCyl1nHTA&s" alt="Campus Image 2">
+            <img src="https://dl.geu.ac.in/uploads/image/choosing-the-right-university.jpg" alt="Campus Image 3">
+        </div>
+
+        <!-- Theme Button -->
+        <button class="btn" onclick="changeTheme()">
+            Change Theme
+        </button>
+    </div>
+
+</body>
+</html>

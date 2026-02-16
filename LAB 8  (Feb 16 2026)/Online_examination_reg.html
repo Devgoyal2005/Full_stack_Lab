@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination Registration Form</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: rgb(174, 201, 210);
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Alert method
+        function showAlert() {
+            alert("Welcome to the Online Examination Registration");
+            showPrompt();
+        }
+
+        // Prompt method
+        function showPrompt() {
+            let name = prompt("Enter your name:");
+            if (name !== null) {
+                alert("Hello, " + name);
+            }
+            showConfirm();
+        }
+
+        // Confirm method
+        function showConfirm() {
+            let result = confirm("Do you want to submit the form?");
+            if (result) {
+                alert("Form Submitted Successfully!");
+                openWindow();
+            } else {
+                alert("Submission Cancelled.");
+            }
+        }
+
+        // Open method
+        function openWindow() {
+            window.open("admit_card.html", "_blank");
+        }
+    </script>
+</head>
+
+<body style="background-color: lightgrey;">
+    <h1>Graphic Era University</h1>
+    <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp" 
+    alt="College Logo" align="center" height="150" width="625"style="display:block; margin: 0 auto;">
+    <br><br>
+    <h2>Online Examination Registration Form</h2>
+
+    <!-- Buttons to trigger window methods -->
+    <button style="display:block; margin: 0 auto; height:75px; width:200px" onclick="showAlert()">Register Now</button>
+
+</body>
+</html>
