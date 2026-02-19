@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calendar</title>
+    <style>
+        table {
+            width: 60%;
+            margin: auto;
+            text-align: center; 
+            background-color: rgb(246, 226, 252);
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: rgb(222, 198, 243);
+        }
+        h2 {
+            text-align: center;
+        }
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>Calendar</h2>
+<div class="controls">
+    Month:
+    <select id="month" onchange="generateCalendar()">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+    </select>Year:<select id="year" onchange="generateCalendar()">
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026" selected>2026</option>
+    </select>
+</div>
+<table id="calendar"></table>
+
+<script>
+    function generateCalendar() 
+    {
+        let year = parseInt(document.getElementById("year").value);
+        let month = parseInt(document.getElementById("month").value);
+        let firstDay = new Date(year, month, 1).getDay();
+        let totalDays = new Date(year, month + 1, 0).getDate();
+        let cal = "";
+        cal += "<tr>";
+        cal += "<th>Sunday</th>";
+        cal += "<th>Monday</th>";
+        cal += "<th>Tuesday</th>";
+        cal += "<th>Wednesday</th>";
+        cal += "<th>Thursday</th>";
+        cal += "<th>Friday</th>";
+        cal += "<th>Saturday</th>";
+        cal += "</tr>";
+        let date = 1;
+        for (let i = 0; i < 6 && date <= totalDays; i++) 
+        {
+            cal += "<tr>";
+            for (let j = 0; j < 7; j++) 
+            {
+            if (i == 0 && j < firstDay) 
+            {
+                cal += "<td></td>";
+            }
+            else if (date <= totalDays) 
+            {
+                cal += "<td>" + date + "</td>";
+                date++;
+            }
+            else 
+            {
+                cal += "<td></td>";
+            }
+        }
+        cal += "</tr>";
+    }
+        document.getElementById("calendar").innerHTML = cal;
+    }
+    generateCalendar();
+</script>
+</body>
+</html>

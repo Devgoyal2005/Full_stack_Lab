@@ -1,59 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Examination Registration Form</title>
+    <title>Online Examination Registration and Confirmation System</title>
     <style>
         h1{
+            background-color: lightblue;
             text-align: center;
-            background-color: rgb(174, 201, 210);
         }
         h2{
             text-align: center;
         }
+        img{
+            margin-right: 600px;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            background-color: rgb(222, 235, 193); 
+            color: black; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+        }
+        button:hover{
+            background-color: rgb(166, 241, 175);
+            cursor: pointer;
+        }
     </style>
+
     <script>
-        // Alert method
+        let admitWindow;   // 🔹 added
+
         function showAlert() {
+            admitWindow = window.open("", "_blank"); // 🔹 key fix
             alert("Welcome to the Online Examination Registration");
             showPrompt();
         }
 
-        // Prompt method
         function showPrompt() {
-            let name = prompt("Enter your name:");
-            if (name !== null) {
-                alert("Hello, " + name);
-            }
+            prompt("Please enter your name:");
             showConfirm();
         }
 
-        // Confirm method
         function showConfirm() {
-            let result = confirm("Do you want to submit the form?");
-            if (result) {
-                alert("Form Submitted Successfully!");
-                openWindow();
+            let res = confirm("Do you want to proceed with the registration?");
+            if(res) {
+                openAdmitCard();
             } else {
-                alert("Submission Cancelled.");
+                alert("Registration cancelled.");
+                admitWindow.close();
             }
         }
 
-        // Open method
-        function openWindow() {
-            window.open("admit_card.html", "_blank");
+        function openAdmitCard() 
+        {
+            let win = admitWindow; // 🔹 reused window
+
+            win.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Admit Card</title>
+                <style>
+                    body {
+                        background-color: rgb(235, 225, 225);
+                        margin: 20px;
+                        font-family: Arial;
+                    }
+                    h1 {
+                        text-align: center;
+                    }
+                    .details {
+                        margin-top: 30px;
+                    }
+                    table {
+                        width: 100%;
+                        margin-top: 30px;
+                        border-collapse: collapse;
+                    }
+                    table, th, td {
+                        border: 1px solid black;
+                    }
+                    th, td {
+                        padding: 8px;
+                        text-align: center;
+                    }
+                    button {
+                        padding: 8px 15px;
+                        margin: 10px;
+                        font-size: 14px;
+                        background-color: rgb(205, 229, 232);
+                    }
+                    #b1:hover {
+                        background-color: rgb(166, 241, 175);
+                        cursor: pointer;
+                    }
+                    #b2:hover {
+                        background-color: rgb(228, 101, 101);
+                        cursor: pointer;
+                    }
+                </style>
+
+                <script>
+                    function printAdmitCard() {
+                        if(confirm("Do you want to print the Admit Card?")) {
+                            window.print();
+                        } else {
+                            alert("Print cancelled.");
+                        }
+                    }
+                    function closePage() {
+                        window.close();
+                    }
+                <\/script>
+            </head>
+
+            <body>
+                <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp">
+                <img src="LAB 8  (Feb 16 2026)\WhatsApp Image 2025-06-01 at 13.16.20_fcf039d8.jpg" alt="Student Photo" align="right" height="200px" width="180px" border="1">
+                <h1>Examination Admit Card</h1>
+                <div class="details">
+                    <strong>Student Name:</strong> Dev Goyal<br>
+                    <strong>Program:</strong> B.Tech<br>
+                    <strong>Branch:</strong> CSE (AI & DS)<br>
+                    <strong>Father's Name:</strong> Mr. Nikhil Goyal<br>
+                    <strong>Semester:</strong> VI<br>
+                    <strong>Roll No:</strong> 2023857<br>
+                    <strong>Enrollment No:</strong> GE-232023857
+                </div>
+
+                <table>
+                    <tr>
+                        <th>S. No</th>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>TCS-693</td>
+                        <td>Full Stack Web Development</td>
+                        <td>Eligible</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>TCS-601</td>
+                        <td>Compiler Design</td>
+                        <td>Eligible</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>TCS-662</td>
+                        <td>Machine Learning</td>
+                        <td>Eligible</td>
+                    </tr>
+                </table>
+
+                <button id="b1" onclick="printAdmitCard()">Print</button>
+                <button id="b2" onclick="closePage()">Close</button>
+            </body>
+            </html>
+            `);
+
+            win.document.close();
         }
     </script>
 </head>
 
-<body style="background-color: lightgrey;">
+<body style="background-color: rgb(144, 212, 246);">
     <h1>Graphic Era University</h1>
-    <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp" 
-    alt="College Logo" align="center" height="150" width="625"style="display:block; margin: 0 auto;">
-    <br><br>
-    <h2>Online Examination Registration Form</h2>
-
-    <!-- Buttons to trigger window methods -->
-    <button style="display:block; margin: 0 auto; height:75px; width:200px" onclick="showAlert()">Register Now</button>
-
+    <img src="https://dl.geu.ac.in/uploads/image/geu-logo-1.webp" align="right" height="90">
+    <br><br><br><br>
+    <h2>Online Examination Registration and Confirmation System</h2>
+    <button onclick="showAlert()">Register Now!</button>
 </body>
 </html>
