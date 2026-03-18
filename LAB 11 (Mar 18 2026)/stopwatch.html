@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #time {
+            font-size: 50px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Stopwatch</h2>
+
+    <!-- Time Display -->
+    <h1 id="time"><i>0</i></h1>
+
+    <!-- Buttons -->
+    <button onclick="start()" style="background-color: green; color: white;">START</button>
+    <button onclick="pause()" style="background-color: orange; color: white;">PAUSE</button>
+    <button onclick="reset()" style="background-color: red; color: white;">RESET</button>
+
+    <script>
+        let count = 0;
+        let timer = null;
+
+        function updateTime() {
+            count++;
+            document.getElementById("time").innerHTML = "<i>" + count + "</i>";
+        }
+
+        function start() {
+            timer = setInterval(updateTime, 1000);
+        }
+
+        function pause() {
+            clearInterval(timer);
+        }
+
+        function reset() {
+            clearInterval(timer);
+            count = 0;
+            document.getElementById("time").innerText = "0";
+        }
+    </script>
+
+</body>
+</html>
