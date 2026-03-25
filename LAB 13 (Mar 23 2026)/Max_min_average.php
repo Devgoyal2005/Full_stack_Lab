@@ -2,6 +2,20 @@
 <html>
 <head>
     <title>Three Numbers Calculation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 6px;
+            margin: 5px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -35,9 +49,9 @@ if (isset($_POST['calculate'])) {
     // Average
     $avg = ($a + $b + $c) / 3;
 
-    echo "<h3>Maximum: $max</h3>";
-    echo "<h3>Smallest: $min</h3>";
-    echo "<h3>Average: $avg</h3>";
+    echo "<h3 style='color:green;'>Maximum: $max</h3>";
+    echo "<h3 style='color:blue;'>Smallest: $min</h3>";
+    echo "<h3 style='color:purple;'>Average: $avg</h3>";
 }
 ?>
 
