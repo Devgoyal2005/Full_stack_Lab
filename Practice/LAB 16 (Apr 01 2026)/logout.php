@@ -11,6 +11,6 @@ if (isset($_COOKIE['username'])) {
 }
 
 // Redirect back
-header("location: index.php");
+header("Location: session_cookie_counter.php");
 exit();
 ?>

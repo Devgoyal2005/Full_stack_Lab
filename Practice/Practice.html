@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table, th, td, tr{
+				border: 1px solid black;
+			}
+			.first{
+				background-color: bisque;
+				padding: 20px;
+			}
+			table{
+				background-color: antiquewhite;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Calendar</h1>
+		<div class="first">
+		Enter month:
+		<select id="month" onchange="calendar()">
+			<option value="4">May</option>
+		</select>
+		Enter Year:
+		<select id="year" onchange="calendar()">
+			<option value="2026">2026</option>
+		</select>
+		<table id="cale"></table></div>
+		<script>
+			function calendar(){
+				let month = parseInt(document.getElementById('month').value);
+				let year = parseInt(document.getElementById('year').value);
+				let firstday = new Date(year, month, 1).getDay();
+				let total = new Date(year, month+1, 0).getDate();
+				let cal="<tr>"
+				cal+="<th>Sunday</th>"
+				cal+="<th>Monay</th>"
+				cal+="<th>Tuesday</th>"
+				cal+="<th>Wedday</th>"
+				cal+="<th>Thursday</th>"
+				cal+="<th>Friday</th>"
+				cal+="<th>Saturday</th>"
+				cal+="</tr>"
+				let date = 1;
+				for(let i =0;i<6;i++)
+				{
+					cal+="<tr>";
+					for(let j =0;j<7;j++)
+					{
+						if(i==0 && j<firstday)
+						{
+							cal+="<td></td>";
+						}
+						else if(date<=total)
+						{
+							cal+="<td>"+date+"</td>";
+							date+=1;
+						}
+						else
+						{
+							cal+="<td></td>";
+						}
+
+					}
+					cal+="</tr>";
+				}
+				document.getElementById('cale').innerHTML=cal;
+			}
+			calendar();
+		</script>
+	</body>
+</html>
